@@ -31,17 +31,59 @@ public:
 	virtual void OnRender(void){
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         //timer010 = 0.09; //for screenshot!
+
+        /*
+        * OpenGL funciona como una pila de estados
+        */
+
         glPushMatrix();
-        
+
         if (shader) shader->begin();
         
-        glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
-        glutSolidTeapot(1.0);
+        //Aquí se inicia el dibujo
+
+        //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
+        glTranslatef(0.0f, 0.0f, -1.0f);
+
+        glPushMatrix();
+
+            glPushMatrix();
+                glScalef(1.0f, 0.5f, 1.0f);
+                //glutSolidTeapot(0.5);
+                glutSolidSphere(0.5f, 20, 20);
+            glPopMatrix();
+
+            //Una tetera
+            glPushMatrix();
+                //glRotatef(45,0, 0, 1); //Rotación respecto al origen del mundo
+                glTranslatef(1.0f, 0.0f, 0.0f);
+                glRotatef(45, 0, 0, 1); //Rotación respecto al origen del objeto
+                //glutSolidTeapot(0.5);
+                glutSolidCube(0.5);
+            glPopMatrix();
+
+
+            //Otra tetera
+            glPushMatrix();
+                //glTranslatef(-1.0f, 0.0f, 0.0f);
+                //glutSolidTeapot(0.5);
+                glBegin(GL_TRIANGLES);
+                    //Indicando coordenadas del triangulo
+                    glVertex3f(0.5f, 0.0f, 0.0f);
+                    glVertex3f(0.0f, 0.5f, 0.0f);
+                    glVertex3f(-0.5f, 0.0f, 0.0f);
+                glEnd();
+            glPopMatrix();
+
+        glPopMatrix();
+
+        //Aquí finaliza el dibujo
 
         if (shader) shader->end();
       
         glutSwapBuffers();
         glPopMatrix();
+
         UpdateTimer();
         Repaint();
 	}
@@ -52,7 +94,8 @@ public:
 	// is already available!
 	virtual void OnInit(){
 		glClearColor(0.5f, 0.5f, 1.0f, 0.0f);
-		glShadeModel(GL_SMOOTH);
+		glShadeModel(GL_SMOOTH); //Estoy usando una normal por vertice
+        //glShadeModel(GL_FlAT); //Estoy usando una normal por polígono
 		glEnable(GL_DEPTH_TEST);
 
 		shader = SM.loadfromFile("vertexshader.txt","fragmentshader.txt"); // load (and compile, link) from file
