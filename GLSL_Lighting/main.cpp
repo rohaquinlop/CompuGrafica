@@ -53,6 +53,11 @@ public:
                 glutSolidSphere(0.5f, 20, 20);
             glPopMatrix();
 
+            glPushMatrix();
+                glScalef(2.0f, 0.5f, 1.0f);
+                glutSolidCylinder(0.5f, 1.0, 10, 10);
+            glPopMatrix();
+
             //Una tetera
             glPushMatrix();
                 //glRotatef(45,0, 0, 1); //Rotación respecto al origen del mundo
