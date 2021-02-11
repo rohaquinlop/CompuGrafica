@@ -1,0 +1,5 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(36,5): warning MSB4211: La propiedad "IntermediateOutputPath" se va a establecer en un valor por primera vez, pero ya se utilizó en "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (35,5)".
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(337,5): warning MSB4211: La propiedad "CleanFile" se va a establecer en un valor por primera vez, pero ya se utilizó en "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (35,5)".
+cl : línea de comandos warning D9035: La opción 'Gm' está desusada y se quitará en próximas versiones
+  main.cpp
+  TemplateProject.vcxproj -> C:\Users\Hafid\Documents\Universidad\CompuGráfica\GLSL_Lighting\Debug\TemplateProject.exe

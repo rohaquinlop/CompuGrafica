@@ -1,0 +1,2 @@
+C:\Users\Hafid\Documents\Universidad\CompuGráfica\GLSL_Lighting\Debug\TemplateProject.exe
+C:\Users\Hafid\Documents\Universidad\CompuGráfica\GLSL_Lighting\Debug\TemplateProject.pdb
