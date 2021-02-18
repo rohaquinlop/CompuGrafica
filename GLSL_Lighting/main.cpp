@@ -43,10 +43,55 @@ public:
         //Aquí se inicia el dibujo
 
         //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
-        glTranslatef(0.0f, 0.0f, -1.0f);
+        glTranslatef(0.0f, 0.0f, -10.0f);
+        //glRotatef(30, ); //Preguntar
 
         glPushMatrix();
 
+            glPushMatrix();
+                glTranslatef(3, 0, 0);
+                glutSolidTeapot(0.5);
+            glPopMatrix();
+
+            glPushMatrix();
+                glTranslatef(-3, 0, 0);
+                glutSolidTeapot(0.5);
+            glPopMatrix();
+
+            glPushMatrix();
+                glTranslatef(0, -3, 0);
+                glutSolidTeapot(0.5);
+            glPopMatrix();
+
+            glPushMatrix();
+                glTranslatef(0, 3, 0);
+                glBegin(GL_TRIANGLES);
+                    //Indicando coordenadas del triangulo
+                    glVertex3f(1.5f, 0.0f, 0.0f);
+                    glVertex3f(0.0f, 2.598076211353316f, 0.0f);
+                    glVertex3f(-1.5f, 0.0f, 0.0f);
+                glEnd();
+            glPopMatrix();
+
+            glPushMatrix();
+                glTranslatef(3, 3, 0);
+                glRotatef(45, 0, 0, 1); //Rotación respecto al origen del mundo
+                glutSolidCube(0.5);
+            glPopMatrix();
+
+            glPushMatrix();
+                glTranslatef(-2.598076211353316, 1.5, 0);
+                glRotatef(-30, 0, 0, 1); //Rotación respecto al origen del mundo
+                glutSolidCube(0.5);
+            glPopMatrix();
+
+            //Extra
+            glPushMatrix();
+                glScalef(1.0f, 0.5f, 1.0f);
+                glutSolidSphere(0.5f, 20, 20);
+            glPopMatrix();
+
+        /*
             glPushMatrix();
                 glScalef(1.0f, 0.5f, 1.0f);
                 //glutSolidTeapot(0.5);
@@ -79,6 +124,7 @@ public:
                     glVertex3f(-0.5f, 0.0f, 0.0f);
                 glEnd();
             glPopMatrix();
+        */
 
         glPopMatrix();
 
