@@ -28,6 +28,9 @@
     <Filter Include="cwc\source">
       <UniqueIdentifier>{aecab91c-ab5f-4428-9f2b-5dd4e533c3c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Clases">
+      <UniqueIdentifier>{5ff2a8e5-b712-4838-8ea6-507f780ec366}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glew\include\Gl\glew.h">
@@ -68,6 +71,21 @@
     </ClInclude>
     <ClInclude Include="cwc\include\glWindow.h">
       <Filter>cwc\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Arbol.h">
+      <Filter>Clases</Filter>
+    </ClInclude>
+    <ClInclude Include="Tetera.h">
+      <Filter>Clases</Filter>
+    </ClInclude>
+    <ClInclude Include="Obj.h">
+      <Filter>Clases</Filter>
+    </ClInclude>
+    <ClInclude Include="TrianguloEquilatero.h">
+      <Filter>Clases</Filter>
+    </ClInclude>
+    <ClInclude Include="TrianguloDeCabeza.h">
+      <Filter>Clases</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +171,21 @@
       <Filter>cwc\source</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Arbol.cpp">
+      <Filter>Clases</Filter>
+    </ClCompile>
+    <ClCompile Include="Tetera.cpp">
+      <Filter>Clases</Filter>
+    </ClCompile>
+    <ClCompile Include="Obj.cpp">
+      <Filter>Clases</Filter>
+    </ClCompile>
+    <ClCompile Include="TrianguloEquilatero.cpp">
+      <Filter>Clases</Filter>
+    </ClCompile>
+    <ClCompile Include="TrianguloDeCabeza.cpp">
+      <Filter>Clases</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="freeglut\source\freeglutdll.def">

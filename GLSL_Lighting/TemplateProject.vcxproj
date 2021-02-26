@@ -89,6 +89,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Arbol.h" />
     <ClInclude Include="cwc\include\glApplication.h" />
     <ClInclude Include="cwc\include\glsl.h" />
     <ClInclude Include="cwc\include\glutwindow.h" />
@@ -102,8 +103,13 @@
     <ClInclude Include="glew\include\Gl\glew.h" />
     <ClInclude Include="glew\include\Gl\glxew.h" />
     <ClInclude Include="glew\include\Gl\wglew.h" />
+    <ClInclude Include="Obj.h" />
+    <ClInclude Include="Tetera.h" />
+    <ClInclude Include="TrianguloDeCabeza.h" />
+    <ClInclude Include="TrianguloEquilatero.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Arbol.cpp" />
     <ClCompile Include="cwc\source\glApplication.cpp" />
     <ClCompile Include="cwc\source\glsl.cpp" />
     <ClCompile Include="cwc\source\glutwindow.cpp" />
@@ -132,6 +138,10 @@
     <ClCompile Include="freeglut\source\freeglut_window.c" />
     <ClCompile Include="glew\source\glew.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Obj.cpp" />
+    <ClCompile Include="Tetera.cpp" />
+    <ClCompile Include="TrianguloDeCabeza.cpp" />
+    <ClCompile Include="TrianguloEquilatero.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="freeglut\source\freeglutdll.def" />

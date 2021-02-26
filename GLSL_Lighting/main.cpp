@@ -8,6 +8,11 @@
 #include "glutWindow.h"
 #include <iostream>
 #include "glsl.h"
+#include "Obj.h"
+#include "Arbol.h"
+#include "Tetera.h"
+#include "TrianguloEquilatero.h"
+#include "TrianguloDeCabeza.h"
 #include <time.h>
 
 using namespace std;
@@ -23,6 +28,10 @@ protected:
    clock_t time0,time1;
    float timer010;  // timer counting 0->1->0
    bool bUp;        // flag if counting up or down.
+   Arbol saman;
+   Tetera mugMan;
+   TrianguloEquilatero tri;
+   TrianguloDeCabeza tInverso;
 
 
 public:
@@ -44,53 +53,13 @@ public:
 
         //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
         glTranslatef(0.0f, 0.0f, -10.0f);
-        //glRotatef(30, ); //Preguntar
 
         glPushMatrix();
 
-            glPushMatrix();
-                glTranslatef(3, 0, 0);
-                glutSolidTeapot(0.5);
-            glPopMatrix();
-
-            glPushMatrix();
-                glTranslatef(-3, 0, 0);
-                glutSolidTeapot(0.5);
-            glPopMatrix();
-
-            glPushMatrix();
-                glTranslatef(0, -3, 0);
-                glutSolidTeapot(0.5);
-            glPopMatrix();
-
-            glPushMatrix();
-                glTranslatef(0, 3, 0);
-                glBegin(GL_TRIANGLES);
-                    //Indicando coordenadas del triangulo
-                    glVertex3f(1.5f, 0.0f, 0.0f);
-                    glVertex3f(0.0f, 2.598076211353316f, 0.0f);
-                    glVertex3f(-1.5f, 0.0f, 0.0f);
-                glEnd();
-            glPopMatrix();
-
-            glPushMatrix();
-                glTranslatef(3, 3, 0);
-                glRotatef(45, 0, 0, 1); //Rotación respecto al origen del mundo
-                glutSolidCube(0.5);
-            glPopMatrix();
-
-            glPushMatrix();
-                glTranslatef(-2.598076211353316, 1.5, 0);
-                glRotatef(-30, 0, 0, 1); //Rotación respecto al origen del mundo
-                glutSolidCube(0.5);
-            glPopMatrix();
-
-            //Extra
-            glPushMatrix();
-                glScalef(1.0f, 0.5f, 1.0f);
-                glutSolidSphere(0.5f, 20, 20);
-            glPopMatrix();
-
+            saman.draw(-3.0f, 0.0f, 0.0f);
+            mugMan.draw(3.0f, 0.0f, 0.0f, 0.5f);
+            tri.draw(0.0, 3.0f, 0.0, 2.0f);
+            tInverso.draw(0.0, -3.0f, 0.0, 2.0f);
         /*
             glPushMatrix();
                 glScalef(1.0f, 0.5f, 1.0f);
@@ -159,6 +128,11 @@ public:
         time0 = clock();
         timer010 = 0.0f;
         bUp = true;
+
+        saman = Arbol();
+        mugMan = Tetera();
+        tri = TrianguloEquilatero();
+        tInverso = TrianguloDeCabeza();
 
         DemoLight();
 	}
